@@ -1,0 +1,54 @@
+{% extends "plantillaBase.php.twig" %}
+
+{% block titulo %}
+    <!--Fabio Benitez Ramirez-->
+{% endblock %}
+
+{% block contenido %}
+
+
+
+
+	<div class="container">
+
+		<h1 class="mt-4">Foro</h1>
+		<a href="tablero/anadir">Crear Hilo</a>
+
+		<table class="table">
+
+			<thead>
+				<th>#</th>
+				<th>Nombre</th>
+				<th>Fecha Creación</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</thead>
+
+			<tbody>
+				
+			
+
+				   {% for item in dat %}
+
+						
+
+						<tr>
+						<td>{{item.idHilo}}</td>
+						<td>{{item.titulo}}</td>
+						<td>{{item.Fecha}}</td>
+						<td><a href=\"index.php?con=nota&ope=listar&id=$id\">Ver</a></td>
+						<td><a href=\"tablero/editar/$id\">Editar</a></td>
+						<td><a href=\"index.php?ope=borrar&con=tablero&id=$id\">Borrar</a></td>
+						<tr/>
+
+				   {% endfor %}
+
+			</tbody>
+		</table>
+
+	</div>
+   
+
+
+    {% endblock %}

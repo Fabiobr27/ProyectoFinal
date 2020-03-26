@@ -1,0 +1,16 @@
+{% extends "plantilla.base.php.twig" %}
+
+{% block contenido %}
+    <p>Escribe tu comentario nuevo (max. 300 caracteres)</p><br/>
+    <form method="GET" class="form">
+        <input type="hidden" name="con" value="comentario"/>
+        <input type="hidden" name="ope" value="add"/>
+        <input type="hidden" name="idUsu" value="{{ idUsu }}"/>
+        <input type="hidden" name="idPos" value="{{ idPos }}"/>
+
+        <textarea class="form-control" maxlength="300" rows="5" name="texto"></textarea><br/>
+        <button type="submit" class="btn btn-primary mx-2 my-2">Comentar</button>
+        <a href="?con=post&ope=ver&idUsu={{ idUsu }}&idPos={{ idPos }}"><button class="btn btn-danger">Cancelar</button></a>
+    </form>
+    
+{% endblock %}
